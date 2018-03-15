@@ -24,10 +24,11 @@ public class Apropos extends AppCompatActivity {
                 "\n" +
                 "Permet la recherche de salle de réunion et d'informations sur le personnel au sein du siège de Saint Cloud.\n" +
                 "\n" +
-                "Version bêta.\n" +
+                "Version 1.0. 15/03/2018\n" +
                 "\n" +
                 "Pour toute demande d'ajout ou de modification, merci de contacter :\n" +
                 "\n" +
-                " meryl.valier@elis.com ou morgan.bochet@elis.com. ");
+                " meryl.valier@elis.com, morgan.bochet@elis.com \n" +
+                "ou david.barres@elis.com. ");
     }
 }

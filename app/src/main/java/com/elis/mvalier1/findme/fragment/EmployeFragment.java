@@ -2,11 +2,15 @@ package com.elis.mvalier1.findme.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 
 import com.elis.mvalier1.findme.R;
 import com.elis.mvalier1.findme.controller.ExpandableListAdapter;
@@ -33,9 +37,10 @@ public class EmployeFragment extends Fragment {
 
     private String[] tokens;
     private EmployeSample sample = new EmployeSample();
-    private ExpandableListAdapter listAdapter;
+    private EditText editText;
     private ExpandableListView expListView;
-    private List<String> listDataHeader;
+    private ExpandableListAdapter listAdapter;
+    private ArrayList<String> listDataHeader;
     private HashMap<String, List<String>> listDataChild;
     private String line;
     private int lastExpandedPosition = -1;
@@ -44,12 +49,30 @@ public class EmployeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tabemploye, container, false);
 
+        editText = rootView.findViewById(R.id.txtsearch);
         expListView = rootView.findViewById(R.id.lvExp);
 
         prepareListData();
 
+
         listAdapter = new ExpandableListAdapter(getContext(), expListView, listDataHeader, listDataChild);
-        listAdapter.notifyDataSetChanged();
+
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                listAdapter.getFilter().filter(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         expListView.setAdapter(listAdapter);
         expListView.setFastScrollEnabled(true);
@@ -112,6 +135,7 @@ public class EmployeFragment extends Fragment {
                 listDataChild.put(listDataHeader.get(i++), infos);
 
                 Collections.sort(listDataHeader);
+
             }
 
         } catch (IOException e) {

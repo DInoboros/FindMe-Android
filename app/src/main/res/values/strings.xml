@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Find Me - Elis St Cloud     --Beta</string>
+    <string name="app_name">FindMe - Elis St Cloud</string>
     <string name="tab_text_1">Salles</string>
     <string name="tab_text_2">Employés</string>
 </resources>

@@ -130,7 +130,7 @@ public class DBHandler {
 
         createSalle("Corcovado", "face_ascenceur", "5", "face", "face");
         createSalle("Beffroi", "a", "5", "droite", "milieu");
-        createSalle("Cristal", "b", "5", "droite", "debut");
+//        createSalle("Cristal", "b", "5", "droite", "debut");
         createSalle("Chenonceau", "b", "5", "gauche", "milieu");
 
         createSalle("Eiffel", "face_ascenceur", "6", "face", "face");
