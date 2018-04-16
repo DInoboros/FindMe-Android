@@ -9,6 +9,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/adamina"
         android:padding="10dp"
-        android:textSize="40sp"/>
+        android:textSize="35sp"/>
 
 </RelativeLayout>

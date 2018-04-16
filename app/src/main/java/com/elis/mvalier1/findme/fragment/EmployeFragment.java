@@ -26,6 +26,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 
 /**
  * Created by mvalier1 on 01/02/2018.
@@ -96,16 +98,18 @@ public class EmployeFragment extends Fragment {
         listDataHeader = new ArrayList<>();
         listDataChild = new HashMap<>();
         int i = 0;
+        int j = 0;
 
-        InputStream is = getResources().openRawResource(R.raw.liste_emp);
+        InputStream is = getResources().openRawResource(R.raw.exportemploye);
 
         BufferedReader reader = new BufferedReader(
-                new InputStreamReader(is, Charset.forName("UTF-8"))
+                new InputStreamReader(is, Charset.forName("ISO-8859-1"))
         );
 
         try {
             while ((line = reader.readLine()) != null) {
                 tokens = line.split(";");
+                Log.d(TAG, "prepareListData: "+j++);
 
                 sample.setAile(tokens[0]);
                 sample.setEtage(tokens[1]);
@@ -114,6 +118,14 @@ public class EmployeFragment extends Fragment {
                 sample.setPrenom(tokens[4]);
                 sample.setTelephone(tokens[5]);
                 sample.setService(tokens[6]);
+                sample.setPays(tokens[12]);
+                sample.setUsine(tokens[13]);
+                sample.setN1manager(tokens[11]);
+                sample.setN1job(tokens[10]);
+                sample.setCoo(tokens[9]);
+                sample.setCodepostal(tokens[8]);
+                sample.setVille(tokens[14]);
+                sample.setAdresse(tokens[7]);
 
                 String nom = sample.getNom();
                 String prenom = sample.getPrenom();
@@ -122,6 +134,14 @@ public class EmployeFragment extends Fragment {
                 String telephone = sample.getTelephone();
                 String bureau = sample.getNumero();
                 String service = sample.getService();
+                String adresse = sample.getAdresse();
+                String code = sample.getCodepostal();
+                String coo = sample.getCoo();
+                String n1job = sample.getN1job();
+                String n1manager = sample.getN1manager();
+                String pays = sample.getPays();
+                String usine = sample.getUsine();
+                String ville = sample.getVille();
 
                 listDataHeader.add(nom + " " + prenom);
 
@@ -130,11 +150,20 @@ public class EmployeFragment extends Fragment {
                         "\nAile : " + aile +
                         "\nBureau n° : " + bureau +
                         "\nTéléphone : " + telephone +
-                        "\nService : " + service);
+                        "\nService : " + service +
+                        "\nAdresse : " + adresse +
+                        "\nCode : " + code +
+                        "\nVille : " + ville +
+                        "\nPays : " + pays +
+                        "\nCOO : " + coo +
+                        "\nN+1 : " + n1manager +
+                        "\nN+1 Job : " + n1job +
+                        "\nUsine : " + usine);
 
                 listDataChild.put(listDataHeader.get(i++), infos);
 
                 Collections.sort(listDataHeader);
+
 
             }
 

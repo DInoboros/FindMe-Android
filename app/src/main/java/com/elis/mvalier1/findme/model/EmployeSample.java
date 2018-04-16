@@ -22,6 +22,22 @@ public class EmployeSample {
 
     private String service;
 
+    private String pays;
+
+    private String usine;
+
+    private String n1manager;
+
+    private String n1job;
+
+    private String coo;
+
+    private String codepostal;
+
+    private String ville;
+
+    private String adresse;
+
     public long getId() {
         return id;
     }
@@ -86,15 +102,68 @@ public class EmployeSample {
         this.service = service;
     }
 
-    @Override
-    public String toString() {
-        return nom + ' ' + prenom + ' ' +
-                "\nEtage : " + etage + ' ' +
-                "\nAile : " + aile + ' ' +
-                "\nBureau n° : " + numero + ' ' +
-                "\nTéléphone : " + telephone + ' ' +
-                "\nService : " + service ;
+    public String getPays() {
+        return pays;
     }
 
+    public void setPays(String pays) {
+        this.pays = pays;
+    }
+
+    public String getUsine() {
+        return usine;
+    }
+
+    public void setUsine(String usine) {
+        this.usine = usine;
+    }
+
+    public String getN1manager() {
+        return n1manager;
+    }
+
+    public void setN1manager(String n1manager) {
+        this.n1manager = n1manager;
+    }
+
+    public String getN1job() {
+        return n1job;
+    }
+
+    public void setN1job(String n1job) {
+        this.n1job = n1job;
+    }
+
+    public String getCoo() {
+        return coo;
+    }
+
+    public void setCoo(String coo) {
+        this.coo = coo;
+    }
+
+    public String getCodepostal() {
+        return codepostal;
+    }
+
+    public void setCodepostal(String codepostal) {
+        this.codepostal = codepostal;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
 
 }

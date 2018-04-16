@@ -45,7 +45,6 @@ public class SalleFragment extends Fragment{
 
         String[] columns = new String[]{
                 DBHandler.NOM
-
         };
 
         int[] to = new int[]{

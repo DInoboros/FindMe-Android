@@ -25,6 +25,7 @@ public class DBHandler {
     public static final String NIVEAU = "niveau";
     public static final String COTE = "cote";
     public static final String EMPLACEMENT = "emplacement";
+
     //  Database
     private static final int DATABASE_VERSION = 35;
     private static final String DATABASE_NAME = "findme";

@@ -1,7 +1,6 @@
 package com.elis.mvalier1.findme.controller;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +18,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 
 /**
  * Created by mvalier1 on 09/02/2018.
@@ -187,7 +185,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter implements 
                 synchronized (this) {
                     filterResults.values = data;
                     filterResults.count = data.size();
-                    Log.i(TAG, "filterResult if "+filterResults.values);
                 }
             } else {
                 ArrayList<String> filterList = new ArrayList<>();
@@ -203,7 +200,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter implements 
                 }
                 filterResults.values = filterList;
                 filterResults.count = filterList.size();
-                Log.i(TAG, "filterResult else "+filterResults.values);
             }
 
             return filterResults;
