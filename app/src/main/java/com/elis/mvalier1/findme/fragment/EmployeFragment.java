@@ -118,6 +118,7 @@ public class EmployeFragment extends Fragment {
                 sample.setPrenom(tokens[4]);
                 sample.setTelephone(tokens[5]);
                 sample.setService(tokens[6]);
+
                 sample.setPays(tokens[12]);
                 sample.setUsine(tokens[13]);
                 sample.setN1manager(tokens[11]);
